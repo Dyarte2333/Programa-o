@@ -1,0 +1,10 @@
+CREATE TABLE usuarios (
+    id SERIAL PRIMARY KEY,
+    matricula VARCHAR(20) UNIQUE NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    senha_has VARCHAR(255) NOT NULL,
+    tipo VARCHAR(20) CHECK (tipo IN ('aluno','professor')),
+    ativo BOOLEAN DEFAULT TRUE,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
